@@ -41,7 +41,7 @@ ___
 * `ansible --version` - проверка версии `Ansible`.
 
 Ожидаемый результат:
-![[AnsibleVersion.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleVersion.png)
 ## 3.2. Подготовка `SSH` ключей для управляемых машин
 
 По следующей команде генерируем `SSH` ключевые пары:
@@ -133,7 +133,7 @@ docker-compose up -d
 ```
 
 Проверка контейнера:
-![[DockerResult.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/DockerResult.png)
 
 Копируем публичный SSH ключ в контейнер:
 ``` sh
@@ -156,7 +156,7 @@ ssh -i ~/.ssh/ansible_key -p 2222 ansible@localhost
 ```
 
 Результат проверки:
-![[ConnectionResult.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/ConnectionResult.png)
 ## 3.5. Создание инвентарного файла `Ansible`
 
 Создадим `inventory.ini` со следующими параметрами:
@@ -183,7 +183,7 @@ ansible-inventory -i inventory.ini --list
 ```
 
 Результат проверки:
-![[InventoryResult.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/InventoryResult.png)
 ## 3.6. Проверим подключение `Ansible` к управляемому хосту
 
 Первой проверкой является тест `ping`. Команда, при помощи которой выполняется проверка:
@@ -192,7 +192,7 @@ ansible -i inventory.ini managed_hosts -m ping
 ```
 
 Результат первой проверки:
-![[AnsibleTestResult1.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult1.png)
 
 Второй проверкой является сбор информации о системе. Команда, при помощи которой выполняется проверка:
 ``` sh
@@ -200,7 +200,7 @@ ansible -i inventory.ini managed1 -m setup
 ```
 
 Результат второй проверки:
-![[AnsibleTestResult2.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult2.png)
 
 Третьей проверкой является выполнение простой команды. Команда, при помощи которой выполняется проверка:
 ``` sh
@@ -208,7 +208,7 @@ ansible -i inventory.ini managed1 -m command -a "uname -a"
 ```
 
 Результат третьей проверки:
-![[AnsibleTestResult3.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult3.png)
 ## 3.7. Создание и запуск `Ansible Playbook`
 
 Создадим `playbook.yml` со следующими параметрами:
@@ -276,7 +276,7 @@ ansible-playbook -i inventory.ini playbook.yml
 ```
 
 Результат выполнения команды:
-![[PlaybookResult.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/PlaybookResult.png)
 
 ## 3.8.1. Выполнение базовых `ad-hoc` команд
 Получение информации о ядрах `CPU` управляемого хоста. Команда:
@@ -285,7 +285,7 @@ ansible -i inventory.ini managed1 -m setup -a "filter=ansible_processor_cores"
 ```
 
 Результат выполнения команды:
-![[CommandResult1.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult1.png)
 
 Получение информации о свободном места на диске. Команда:
 ``` sh
@@ -293,7 +293,7 @@ ansible -i inventory.ini managed1 -m command -a "df -h"
 ```
 
 Результат выполнения команды:
-![[CommandResult2.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult2.png)
 
 Получение списка всех пользователей. Команда:
 ``` sh
@@ -301,7 +301,7 @@ ansible -i inventory.ini managed1 -m command -a "cat /etc/passwd"
 ```
 
 Результат выполнения команды:
-![[CommandResult3.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult3.png)
 
 Изменение временной зоны хоста на `UTC`. Команда:
 ``` sh
@@ -309,7 +309,7 @@ ansible -i inventory.ini managed1 -m command -a "timedatectl set-timezone utc"
 ```
 
 Результат выполнения команды:
-![[CommandResult4.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult4.png)
 ## 3.8.2. Работа с файлами
 
 Создадим `playbook.yml` со следующими параметрами:
@@ -357,7 +357,7 @@ ansible-playbook -i inventory.ini task3_files.yml
 ```
 
 Результат выполнения команды:
-![[ThreeFilesResult.png]]
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/ThreeFilesResult.png)
 
 ___
 # Вывод
