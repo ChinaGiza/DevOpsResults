@@ -122,13 +122,13 @@ pipeline {
 
 Созданный `Jenkins Job` был успешно собран и запущен.   
 Результат запуск:   
-![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/JenkinsResBefore.png)   
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba2Files/JenkinsResBefore.png)   
 
 Далее была проведена проверка работы `GitHub Webhook`.   
 Созданный `commit` в `GitHub`:   
-![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/GitTriggerCommit.png)   
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba2Files/GitTriggerCommit.png)   
 Результат запуска после `commit`:   
-![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/JenkinsResAfter.png)
+![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba2Files/JenkinsResAfter.png)
 ___
 # Вывод
 
