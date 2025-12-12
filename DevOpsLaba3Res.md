@@ -1,6 +1,6 @@
 **Лабораторная работ №3**   
 по дисциплине: **Основы DevOps**   
-на тему: **Основы Ansible в DevOps** 
+на тему: **Основы Ansible в DevOps**   
 Группа: **ПИ-431Б**   
 Студент: **Махмутов Чингиз Ильдарович**   
 Принял: **Аитбаев Вадим**   
@@ -40,7 +40,7 @@ ___
 * `sudo apt install -y ansible` - для установки `Ansible`.
 * `ansible --version` - проверка версии `Ansible`.
 
-Ожидаемый результат:
+Результат выполнения:
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleVersion.png)
 ## 3.2. Подготовка `SSH` ключей для управляемых машин
 
@@ -155,7 +155,7 @@ docker exec ansible-managed-host chmod 600 /home/ansible/.ssh/authorized_keys
 ssh -i ~/.ssh/ansible_key -p 2222 ansible@localhost
 ```
 
-Результат проверки:
+Результат проверки:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/ConnectionResult.png)
 ## 3.5. Создание инвентарного файла `Ansible`
 
@@ -182,7 +182,7 @@ ansible_ssh_common_args=-o StrictHostKeyChecking=no
 ansible-inventory -i inventory.ini --list
 ```
 
-Результат проверки:
+Результат проверки:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/InventoryResult.png)
 ## 3.6. Проверим подключение `Ansible` к управляемому хосту
 
@@ -191,7 +191,7 @@ ansible-inventory -i inventory.ini --list
 ansible -i inventory.ini managed_hosts -m ping
 ```
 
-Результат первой проверки:
+Результат первой проверки:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult1.png)
 
 Второй проверкой является сбор информации о системе. Команда, при помощи которой выполняется проверка:
@@ -199,7 +199,7 @@ ansible -i inventory.ini managed_hosts -m ping
 ansible -i inventory.ini managed1 -m setup
 ```
 
-Результат второй проверки:
+Результат второй проверки:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult2.png)
 
 Третьей проверкой является выполнение простой команды. Команда, при помощи которой выполняется проверка:
@@ -207,7 +207,7 @@ ansible -i inventory.ini managed1 -m setup
 ansible -i inventory.ini managed1 -m command -a "uname -a"
 ```
 
-Результат третьей проверки:
+Результат третьей проверки:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/AnsibleTestResult3.png)
 ## 3.7. Создание и запуск `Ansible Playbook`
 
@@ -284,7 +284,7 @@ ansible-playbook -i inventory.ini playbook.yml
 ansible -i inventory.ini managed1 -m setup -a "filter=ansible_processor_cores"
 ```
 
-Результат выполнения команды:
+Результат выполнения команды:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult1.png)
 
 Получение информации о свободном места на диске. Команда:
@@ -292,7 +292,7 @@ ansible -i inventory.ini managed1 -m setup -a "filter=ansible_processor_cores"
 ansible -i inventory.ini managed1 -m command -a "df -h"
 ```
 
-Результат выполнения команды:
+Результат выполнения команды:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult2.png)
 
 Получение списка всех пользователей. Команда:
@@ -300,7 +300,7 @@ ansible -i inventory.ini managed1 -m command -a "df -h"
 ansible -i inventory.ini managed1 -m command -a "cat /etc/passwd"
 ```
 
-Результат выполнения команды:
+Результат выполнения команды:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult3.png)
 
 Изменение временной зоны хоста на `UTC`. Команда:
@@ -308,7 +308,7 @@ ansible -i inventory.ini managed1 -m command -a "cat /etc/passwd"
 ansible -i inventory.ini managed1 -m command -a "timedatectl set-timezone utc"
 ```
 
-Результат выполнения команды:
+Результат выполнения команды:   
 ![alt text](https://github.com/ChinaGiza/DevOpsResults/blob/main/DevOpsLaba3Files/CommandResult4.png)
 ## 3.8.2. Работа с файлами
 
